@@ -66,6 +66,7 @@ class Admin extends CI_Controller {
 
   public function profile(){
     $profile_info['profile_info'] = $this->Admin_model->get_profile_data();
+    // print_r($profile_info);
     $this->load->view("Admin/profile", $profile_info);
   }
 

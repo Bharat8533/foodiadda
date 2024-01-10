@@ -21,8 +21,28 @@
       $this->load->view("user-site/common/footer");
     }
 
-    public function home(){
+    public function index(){
       $this->load->view("user-site/home");
+    }
+
+    public function about(){
+      $this->load->view('user-site/about');
+    }
+
+    public function services(){
+      $this->load->view('user-site/services');
+    }
+
+    public function contact(){
+      $this->load->view('user-site/contact');
+    }
+
+    public function test(){
+      $this->load->view("user-site/test");
+    }
+
+    public function not_found_page(){
+      $this->load->view('user-site/not_found_page');
     }
   }
 ?>

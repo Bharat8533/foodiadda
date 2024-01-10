@@ -37,7 +37,7 @@
         <div class="form-group flex flex-col gap-1">
           <div class="flex justify-between">
             <label for="password">Password</label>
-            <a href="<?php echo base_url("User/gmail_auth"); ?>" target="_blank" class="modal-open text-blue-600 hover:text-blue-700 hover:underline">Forget password?</a>
+            <a href="<?php echo base_url("Admin/gmail_auth"); ?>" target="_blank" class="modal-open text-blue-600 hover:text-blue-700 hover:underline">Forget password?</a>
           </div>
           <div class="flex w-full h-full  rounded-md overflow-hidden items-center border border-gray-400">
             <input type="password" name="password" id="password" class="w-[88%] bg-none py-1 px-2 focus:outline-none">
@@ -45,7 +45,7 @@
           </div>
         </div>
         <button type="submit" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-md text-sm px-5 py-2 me-2 mb-2">Sign in</button>
-        <span class="text-center text-gray-700 font-light">Not have an account? <a href="<?php echo base_url ("User/sign_up"); ?>" class="text-blue-600 hover:text-blue-700 hover:underline ease-in duration-100">Sign Up</a></span>
+        <span class="text-center text-gray-700 font-light">Not have an account? <a href="<?php echo base_url ("Admin/sign_up"); ?>" class="text-blue-600 hover:text-blue-700 hover:underline ease-in duration-100">Sign Up</a></span>
       </form>
     </div>
   </div>
@@ -72,7 +72,7 @@
       $("#login_form_id").on("submit", (e) => {
         e.preventDefault();
 
-        fetch("<?php echo base_url('User/get_user_login') ;?>", {
+        fetch("<?php echo base_url('Admin/get_user_login') ;?>", {
           method : "post",
           body : new FormData(e.target)
         })
@@ -81,12 +81,12 @@
           if(data.status){
             alert(data.message);
             setTimeout(() => {
-              window.location = "<?php echo base_url("User/home"); ?>"
+              window.location = "<?php echo base_url("Admin/home"); ?>"
             }, 1000);
           }else{
             alert(data.message);
             setTimeout(() => {
-              window.location = "<?php echo base_url("User/sign_up"); ?>"
+              window.location = "<?php echo base_url("Admin/sign_up"); ?>"
             }, 1000);
           }
         })

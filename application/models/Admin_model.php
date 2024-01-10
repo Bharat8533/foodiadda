@@ -117,6 +117,13 @@
       }
     }
 
+    public function get_profile_data(){
+      $user_id = $this->session->userdata('user_id');
+      $user_info = $this->db->query("SELECT * FROM allusers WHERE id = $user_id")->result_array()[0];
+
+      return $user_info;
+    }
+
     public function get_dashboard_data(){
       $items = $this->db->query("SELECT COUNT(item_name) as total_items FROM food_menu")->row_array();
       $categories = $this->db->query("SELECT COUNT(cat_name) as total_cat FROM categories")->row_array();
