@@ -50,7 +50,6 @@ class Admin extends CI_Controller {
     $this->load->view("Admin/forget_pass");
   }
 
-
   public function sidebar(){
     $this->load->view("Admin/common/sidebar");
   }

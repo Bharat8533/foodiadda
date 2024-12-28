@@ -29,7 +29,7 @@
       <img src="https://cdn-icons-png.flaticon.com/512/6117/6117000.png" width="70px" loading="lazy" alt="">
       <h1 class="text-xl">Trouble Logging In?</h1>
       <p class="text-gray-700 text-center leading-5 text-sm">Enter your email and we'll send you a link to get back into your account.</p>
-      <form id="send_redet_link_id" class="flex flex-col gap-4 mt-4 w-full">
+      <form id="send_reset_link_id" class="flex flex-col gap-4 mt-4 w-full">
         <div class="form-group flex flex-col gap-1">
           <input type="email" name="email_id" id="email" placeholder="example@gmail.com"
            class="w-full border border-gray-400 bg-none py-1 px-2 rounded-md focus:outline-none" autocomplete="none">
@@ -43,10 +43,10 @@
 
   <script>
     $(document).ready(function(){
-      $("#send_redet_link_id").on("submit", (e) => {
+      $("#send_reset_link_id").on("submit", (e) => {
         e.preventDefault();
 
-        fetch("<?php echo base_url("User/send_reset_pass_link"); ?>", {
+        fetch("<?php echo base_url("Admin/send_reset_pass_link"); ?>", {
           method : "post",
           body : new FormData(e.target)
         })
